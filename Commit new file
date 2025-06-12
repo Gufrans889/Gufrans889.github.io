@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Music Lover - Gufran Shahidi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-size: 2.5em;
+      color: #00ffcc;
+    }
+    .search-box {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .search-box input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: none;
+      border-radius: 5px;
+    }
+    .song-list {
+      list-style: none;
+      padding: 0;
+    }
+    .song-item {
+      background: #222;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    .song-item:hover {
+      background: #333;
+    }
+    footer {
+      margin-top: 30px;
+      text-align: center;
+    }
+    a {
+      color: #00ffcc;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🎵 Music Lover 🎵</h1>
+    <p>By Gufran Shahidi | <a href="https://instagram.com/gufran__shahidi" target="_blank">@gufran__shahidi</a></p>
+  </header>
+
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search songs..." onkeyup="filterSongs()" />
+  </div>
+
+  <ul class="song-list" id="songList">
+    <li class="song-item">Tum Hi Ho - Arijit Singh</li>
+    <li class="song-item">Bekhayali - Sachet Tandon</li>
+    <li class="song-item">Kun Faya Kun - A.R. Rahman</li>
+    <li class="song-item">Raataan Lambiyan - Jubin Nautiyal</li>
+    <li class="song-item">Shayad - Arijit Singh</li>
+    <li class="song-item">Kabira - Tochi Raina</li>
+    <li class="song-item">Channa Mereya - Arijit Singh</li>
+    <li class="song-item">Agar Tum Saath Ho - Alka Yagnik</li>
+    <li class="song-item">Tera Yaar Hoon Main - Arijit Singh</li>
+    <li class="song-item">Apna Bana Le - Arijit Singh</li>
+  </ul>
+
+  <footer>
+    <p>&copy; 2025 Gufran Shahidi. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function filterSongs() {
+      const input = document.getElementById(\"search\").value.toLowerCase();
+      const items = document.querySelectorAll(\".song-item\");
+      items.forEach(item => {
+        item.style.display = item.textContent.toLowerCase().includes(input) ? \"block\" : \"none\";
+      });
+    }
+  </script>
+</body>
+</html>
